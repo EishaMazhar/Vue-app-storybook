@@ -7,20 +7,47 @@
 
   <main>
     <h2>Welcome to my App</h2>
-    <MyButton label="custom button" primary="true"></MyButton>
+    <MyButton label="Custom Button" primary="true" @click="buttonClicked"></MyButton>
+    <Alert
+      v-if="isAlertVisible"
+      :message="alertMessage"
+      :msgType="alertType"
+      @close="isAlertVisible = false"
+    />
   </main>
 </template>
+
 <script>
 import MyButton from '@/components/Button.vue'
+import Alert from '@/components/Alert.vue'
 
 export default {
   name: 'App',
-  
+
   components: {
-    MyButton
+    MyButton,
+    Alert
+  },
+
+  data() {
+    return {
+      isAlertVisible: false,
+      alertMessage: 'Button Clicked!',
+      alertType: 'success' // can be 'danger' as well
+    }
+  },
+
+  methods: {
+    buttonClicked() {
+      this.isAlertVisible = true
+      setTimeout(() => {
+        this.isAlertVisible = false
+      }, 3000) // automatically hide the alert after 3 seconds
+    }
   }
 }
 </script>
+
 <style scoped>
 header {
   line-height: 1.5;
