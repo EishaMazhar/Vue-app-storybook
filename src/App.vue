@@ -1,8 +1,5 @@
-<script setup></script>
-
 <template>
   <header>
-    
     <div class="wrapper">
       <h1>Welcome!</h1>
     </div>
@@ -10,9 +7,20 @@
 
   <main>
     <h2>Welcome to my App</h2>
+    <MyButton label="custom button" primary="true"></MyButton>
   </main>
 </template>
+<script>
+import MyButton from '@/components/Button.vue'
 
+export default {
+  name: 'App',
+  
+  components: {
+    MyButton
+  }
+}
+</script>
 <style scoped>
 header {
   line-height: 1.5;
