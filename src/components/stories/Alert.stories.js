@@ -22,42 +22,34 @@ export default {
   }
 }
 
-// Template for the stories
-const Template = (args) => ({
-  components: { Alert },
-  setup() {
-    return { args }
-  },
-  template: '<Alert v-bind="args" />'
-})
 
 // Primary story for Alert component
-export const Primary = Template.bind({})
-Primary.args = {
-  message: 'This is an important message!',
-  msgType: 'success',
-  size: 'medium'
+export const Primary = {
+  args: { message: 'This is an important message!', msgType: 'success', size: 'medium' }
 }
 
 // Secondary story specifically for a danger type alert
-export const Danger = Template.bind({})
-Danger.args = {
-  message: 'Warning! Something went wrong!',
-  msgType: 'danger',
-  size: 'medium'
+export const Danger = {
+  args: {
+    message: 'Warning! Something went wrong!',
+    msgType: 'danger',
+    size: 'medium'
+  }
 }
 
 // Additional stories can be created for each size with a default message and type
-export const Small = Template.bind({})
-Small.args = {
-  message: 'This is a small alert!',
-  msgType: 'success',
-  size: 'small'
+export const Small = {
+  args: {
+    message: 'This is a small alert!',
+    msgType: 'success',
+    size: 'small'
+  }
 }
 
-export const Large = Template.bind({})
-Large.args = {
-  message: 'This is a large alert!',
-  msgType: 'success',
-  size: 'large'
+export const Large = {
+  args: {
+    message: 'This is a large alert!',
+    msgType: 'success',
+    size: 'large'
+  }
 }
