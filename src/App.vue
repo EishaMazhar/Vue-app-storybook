@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="wrapper">
-      <h1>Welcome!</h1>
+      <h1>Bonjour 😃🎉</h1>
     </div>
   </header>
 
